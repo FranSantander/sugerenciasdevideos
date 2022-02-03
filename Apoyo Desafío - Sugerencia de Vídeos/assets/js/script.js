@@ -16,7 +16,7 @@ let Myapp = (()=>{
 class Multimedia {
     constructor(url){
         let _url = url;
-        this.getUrl = () =>_url;
+        this.getUrl = () => _url;
     }
      getUrl(){
         return this._getUrl();
@@ -29,22 +29,29 @@ class Reproductor extends Multimedia{
     constructor(url, id){
         super(url);
         let _id = id;
-        this._getId = () => _getId;
+        this._getId = () => _id;
     }
    playMultimedia = () =>{
         Myapp.mostrarTodo(this.url, this.getId())
    } 
-   setInicio(time){
+   setInicio(tiempo){
        this.getId().setAtributte("src", `${this.url}?start=${tiempo}`)
    }  
 }
 
-let peli1 = new Reproductor('https://www.youtube.com/embed/Ur_DIHs92NM', peliculas);
-let music1 = new Reproductor('https://www.youtube.com/embed/5hJLHzBTXQQ', musica);
-let serie1 = new Reproductor('https://www.youtube.com/embed/H2HjT1yvin8', series);
-
+let music1 = new Reproductor('https://www.youtube.com/embed/bu7nU9Mhpyo', musica);
 music1.playMultimedia();
-music1.setInicio(75);
+music1.setInicio(65);
+
+let peli1 = new Reproductor('https://www.youtube.com/embed/918rOI1gnQ8', peliculas);
+peli1.playMultimedia();
+peli1.setInicio(1900);
+
+
+let serie1 = new Reproductor('https://www.youtube.com/embed/H2HjT1yvin8', series);
+serie1.playMultimedia();
+serie1.setInicio(321);
+
 
 //seleccionMedios.addEventListener("click", function(){
   //  console.log(seleccionMedios.value);
